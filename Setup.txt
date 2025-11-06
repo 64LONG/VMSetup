@@ -1,0 +1,77 @@
+==============================================
+Initial Setup for Linux Box or image
+==============================================
+
+#Add the users to the sudoer file
+visudo /etc/sudoer
+
+#Test the ability to sudo with user around by update apps
+sudo apt update
+sudo apt upgrade
+
+#obtain stable version of google chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+#install  stable version of google chrome
+sudo apt install ./google-chrome-stable_current_amd64.deb
+
+
+#Installing Git
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git
+
+#Check the version of the Git
+git --version
+
+#Configure Git and GitHub
+git config --global user.name "Your Name"
+git config --global user.email yourname@example.com
+#NOTE: Remember to set email setting to prive on github about and use secure email. Remember SECURITY MATTERS!
+
+#Check Github user account and email
+git config --get user.name
+git config --get user.email
+
+
+#Check the SSH algorithm key
+ls ~/.ssh/id_ed25519.pub
+
+#Developing SSH algorithm key if key is unavailable
+ssh-keygen -t ed25519
+
+#Linking your SSH key with GitHub
+cat ~/.ssh/id_ed25519.pub
+#NOTE 1: Output will likely begin with ssh-ed25519.
+#NOTE 2: Output will end with your username@hostname.
+
+#Testing SSH setting with Github
+ssh -T git@github.com
+# Attempts to ssh to GitHub
+#NOTE1: Say "yes" to the fingerprinting
+
+#Setting up default branch to push to
+git config --global init.defaultBranch main
+
+#Setting up default branch merging settings
+git config --global pull.rebase false
+
+
+#obtain Visual Studio Code (VS Code) Editor package
+wget -O code-latest.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
+
+#Install application package for Visual Studio Code (VS Code) 
+sudo apt install ./code-latest.deb
+
+#Remove installer file
+rm code-latest.deb
+
+#Setting up Git
+
+#Clone repository
+git clone git@github.com:USER-NAME/REPOSITORY-NAME.git
+
+#Usual Git routine
+git add .
+git commit -m "Test commit messafge"
+git push
