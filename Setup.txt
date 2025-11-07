@@ -75,3 +75,8 @@ git clone git@github.com:USER-NAME/REPOSITORY-NAME.git
 git add .
 git commit -m "Test commit messafge"
 git push
+
+#Install the beloved text editor
+sudo apt-get instsll vim
+
+
