@@ -8,6 +8,7 @@ visudo /etc/sudoer
 #Test the ability to sudo with user around by update apps
 sudo apt update
 sudo apt upgrade
+sudo apt update && sudo apt upgrade
 
 #obtain stable version of google chrome
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -78,5 +79,26 @@ git push
 
 #Install the beloved text editor
 sudo apt-get instsll vim
+
+#Install curl
+sudo apt install curl
+
+========================================================
+Installing Node Version Manager (NVM)
+========================================================
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+command -v nvm
+
+========================================================
+Installing Node
+========================================================
+
+nvm install --lts
+nvm use --lts
 
 
