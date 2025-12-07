@@ -6,7 +6,7 @@ top | head -n 3 | tail -n 1
 echo "Current MEM utilization of system"
 free -h
 
-echo "Current space utilization of file system
+echo "Current space utilization of file system"
 df -h
 
 echo "Top 5 processes with highest CPU usage"
